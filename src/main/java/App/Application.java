@@ -5,8 +5,7 @@ import com.online.restaurant.Vendor;
 import com.online.restaurant.Customer;
 
 import com.online.restaurant.OrderMenuItem;
-import dao.CustomerDAO;
-import dao.OrderDAO;
+import dao.*;
 
 import java.sql.SQLOutput;
 import java.util.Date;
@@ -74,6 +73,22 @@ public class Application {
         System.out.println("=======ORDER DETAILS========");
         OrderDAO orderDAO = new OrderDAO();
         orderDAO.createTable();
+
+        System.out.println("=======VENDOR DETAILS========");
+        VendorDao vendorDao = new VendorDao();
+        vendorDao.createTable();
+
+        System.out.println("=======MENUITEM DETAILS========");
+        MenuItemDAO menuItemDAO = new MenuItemDAO();
+        menuItemDAO.createTable();
+
+
+        System.out.println("=======ORDER MENUITEM DETAILS========");
+        orderMenuItem ordermenu = new orderMenuItem();
+        ordermenu.createTable();
+
+
+
 
     }
 }

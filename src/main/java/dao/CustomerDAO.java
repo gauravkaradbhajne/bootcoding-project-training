@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class CustomerDAO {
-        public static final String TABLE_NAME = "customer";
+        public static final String TABLE_NAME = "app_customer";
 
         public void createTable(){
             try{
@@ -24,18 +24,19 @@ public class CustomerDAO {
                 //4.EXECUTE QUERY
 
                 String sql = "Select * from " + TABLE_NAME;
-                ResultSet rs = stmt.executeQuery(sql);
+                String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME
+                        + "(id bigint NOT NULL,"
+                        + "name text,"
+                        + "address text,"
+                        + "phone_number bigint,"
+                        + "city text,"
+                        + "state text,"
+                        + "email_id text,"
+                                +"CONSTRAINT app_customer_pk PRIMARY KEY(id))";
+                System.out.println(" Create table query" + query);
+                stmt.executeUpdate(query);
 
-                while(rs.next()){
-                    System.out.println("Name = " + rs.getString("name"));
-                    System.out.println(" Address= " +rs.getString("address"));
-                    System.out.println(" phone= " +rs.getString("phone_number"));
-                    System.out.println(" City= " +rs.getString("city"));
-                    System.out.println(" City= " +rs.getString("state"));
-                    System.out.println(" City= " +rs.getString("email_id"));
 
-
-                }
             }catch (Exception ex){
               ex.printStackTrace();
             }
