@@ -1,10 +1,10 @@
-package App.Service;
+package Services;
 
 import com.online.restaurant.Customer;
-import com.utils.AddressGenerator;
-import com.utils.EmaiIdGenrator;
-import com.utils.NameGenerator;
-import com.utils.phoneNumberGenerator;
+import util.AddressGenerator;
+import util.EmaiIdGenrator;
+import util.NameGenerator;
+import util.phoneNumberGenerator;
 
 public class CustomerService {
     public void createDummyCustomer(){
