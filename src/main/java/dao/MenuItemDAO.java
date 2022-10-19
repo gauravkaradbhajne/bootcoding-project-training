@@ -8,16 +8,16 @@ import java.sql.Statement;
 public class MenuItemDAO {
     public static final String TABLE_NAME = "app_menu_item";
 
+    private DAOService daoService;
+    public MenuItemDAO(){
+
+        //constructor
+        daoService =new DAOService();
+    }
+
     public void createTable(){
         try{
-            //LOAD JDBC DRIVER
-            Class.forName("org.postgresql.Driver");
-
-            //established connection with database
-
-            Connection con = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                            "postgres","9767635565");
+            Connection con = daoService.getconnection();
 
             //3. CREATE STATEMENT OBJECT
 

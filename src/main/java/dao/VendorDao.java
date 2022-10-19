@@ -8,16 +8,19 @@ import java.sql.Statement;
 public class VendorDao {
     public static final String TABLE_NAME = "app_vendor";
 
+    private DAOService daoService;
+    public VendorDao(){
+
+        //constructor
+        daoService =new DAOService();
+    }
+
+
     public void createTable(){
         try{
-            //LOAD JDBC DRIVER
-            Class.forName("org.postgresql.Driver");
+            Connection con = daoService.getconnection();
 
-            //established connection with database
 
-            Connection con = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                            "postgres","9767635565");
 
             //3. CREATE STATEMENT OBJECT
 

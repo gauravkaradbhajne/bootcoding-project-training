@@ -7,16 +7,16 @@ import java.sql.Statement;
 public class CustomerDAO {
         public static final String TABLE_NAME = "app_customer";
 
+        private DAOService daoService;
+        public CustomerDAO(){
+
+            //constructor
+            daoService =new DAOService();
+        }
+
         public void createTable(){
             try{
-                //LOAD JDBC DRIVER
-                Class.forName("org.postgresql.Driver");
-
-                //established connection with database
-
-                Connection con = DriverManager
-                        .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                                "postgres","9767635565");
+                Connection con = daoService.getconnection();
 
                 //3. CREATE STATEMENT OBJECT
 
