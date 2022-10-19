@@ -2,6 +2,7 @@ package com.online.restaurant;
 
 
 public class Customer {
+    private long customerId;
     private String name;
     private String adress;
     private long phoneNumber;
@@ -10,6 +11,13 @@ public class Customer {
     private String  emailId;
 
 
+    public long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
+    }
 
     //getter start
     public String getName(){
@@ -60,6 +68,7 @@ public class Customer {
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
+
 
 }
 
