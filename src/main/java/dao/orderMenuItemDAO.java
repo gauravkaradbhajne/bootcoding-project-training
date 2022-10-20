@@ -1,14 +1,13 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class orderMenuItem {
+public class orderMenuItemDAO {
     public static final String TABLE_NAME = "app_order_menu_item";
 
     private DAOService daoService;
-    public orderMenuItem(){
+    public orderMenuItemDAO(){
 
         //constructor
         daoService =new DAOService();

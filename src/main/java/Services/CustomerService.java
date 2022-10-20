@@ -1,12 +1,19 @@
 package Services;
 
 import com.online.restaurant.Customer;
+import dao.CustomerDAO;
 import util.AddressGenerator;
 import util.EmaiIdGenrator;
 import util.NameGenerator;
 import util.phoneNumberGenerator;
 
 public class CustomerService {
+
+    private CustomerDAO customerDAO;
+
+    public CustomerService(){
+        customerDAO = new CustomerDAO();
+    }
     public void createDummyCustomer(){
         for (int i = 0; i < 100; i++){
             Customer customer = new Customer();
@@ -19,6 +26,10 @@ public class CustomerService {
             customer.setPhoneNumber(phoneNumberGenerator.getPhoneNumber());
 
             //TODO: Insert Customer into Database
+
+            customerDAO.insertCustomer(customer);
+
+
             System.out.println("===COUSTOMER DETAILS===");
         System.out.println("Name : " + customer.getName());
         System.out.println("Address : " + customer.getAdress());

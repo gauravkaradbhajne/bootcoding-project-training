@@ -36,7 +36,7 @@ public class MenuItemDAO {
             System.out.println(" Create table query" + query);
             stmt.executeUpdate(query);
 
-
+con.close();
 
 
         }catch (Exception ex){

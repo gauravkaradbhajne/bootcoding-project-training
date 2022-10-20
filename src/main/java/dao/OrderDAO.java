@@ -43,6 +43,7 @@ public class OrderDAO {
             System.out.println(" Create table query" + query);
             stmt2.executeUpdate(query);
 
+            con.close();
         }catch (Exception ex){
             ex.printStackTrace();
         }

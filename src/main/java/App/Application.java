@@ -1,19 +1,13 @@
 package App;
 
-import com.online.restaurant.Order;
-import com.online.restaurant.Vendor;
-import com.online.restaurant.Customer;
-
-import com.online.restaurant.OrderMenuItem;
+import Services.CustomerService;
 import dao.*;
-
-import java.sql.SQLOutput;
-import java.util.Date;
 
 
 public class Application {
     public static void main(String[] args) {
-//        Customer Gaurav = new Customer();
+
+        //        Customer Gaurav = new Customer();
 //
 //        Gaurav.setName("Gaurav");
 //        Gaurav.setAdress("Nandanvan , Nagpur");
@@ -84,10 +78,12 @@ public class Application {
 
 
         System.out.println("=======ORDER MENUITEM DETAILS========");
-        orderMenuItem ordermenu = new orderMenuItem();
+        orderMenuItemDAO ordermenu = new orderMenuItemDAO();
         ordermenu.createTable();
 
 
+        CustomerService cs = new CustomerService();
+        cs.createDummyCustomer();
 
 
     }

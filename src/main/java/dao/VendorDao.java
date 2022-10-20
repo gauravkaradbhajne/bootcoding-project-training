@@ -53,6 +53,8 @@ public class VendorDao {
 
 
             }
+
+            con.close();
         }catch (Exception ex){
             ex.printStackTrace();
         }
